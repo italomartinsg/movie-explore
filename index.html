@@ -9,6 +9,30 @@
 </head>
 
 <body>
+  <header>
+    <h1 class="titulo-principal">Movie Explorer</h1>
+  </header>
+  <main>
+    <div class="container">
+
+      <form>
+        <label for="buscar-filme">Buscar Filme</label>
+        <input type="search" id="buscar-filme" placeholder="Ex.: Matrix">
+        <button type="submit" id="btn-buscar">Buscar</button>
+      </form>
+      <section>
+        <h2 class="titulo-populares">Filmes Populares</h2>
+        <p class="list-message" role="status"></p>
+        <ul class="movie-list"></ul>
+      </section>
+    </div>
+  </main>
+  <dialog id="movie-modal">
+    <button type="button" id="close-modal" aria-label="Detalhes do filme">Fechar</button>
+    <p class="details-message" role="status"></p>
+    <div class="movie-details"></div>
+  </dialog>
+
 
   <script type="module" src="./js/main.js"></script>
 </body>
