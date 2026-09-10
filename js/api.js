@@ -3,8 +3,9 @@ import TMDB_TOKEN from "./config.js";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export default async function getPopularMovies() {
+  const params = new URLSearchParams({ language: "pt-BR" });
   try {
-    const response = await fetch(`${BASE_URL}/movie/popular`, {
+    const response = await fetch(`${BASE_URL}/movie/popular?${params}`, {
       headers: {
         Authorization: `Bearer ${TMDB_TOKEN}`,
       },
@@ -22,7 +23,7 @@ export default async function getPopularMovies() {
 }
 
 export async function searchMovies(query) {
-  const params = new URLSearchParams({ query });
+  const params = new URLSearchParams({ query, language: "pt-BR" });
   try {
     const response = await fetch(`${BASE_URL}/search/movie?${params}`, {
       headers: {
@@ -43,8 +44,9 @@ export async function searchMovies(query) {
   }
 }
 export async function getMovieDetails(movieId) {
+  const params = new URLSearchParams({ language: "pt-BR" });
   try {
-    const response = await fetch(`${BASE_URL}/movie/${movieId}`, {
+    const response = await fetch(`${BASE_URL}/movie/${movieId}?${params}`, {
       headers: {
         Authorization: `Bearer ${TMDB_TOKEN}`,
       },
