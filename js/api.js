@@ -13,9 +13,32 @@ export default async function getPopularMovies() {
       throw new Error(`Erro! ${response.status}`);
     }
     const data = await response.json();
+
     return data.results;
   } catch (error) {
     console.error(error);
+    throw error;
+  }
+}
+
+export async function searchMovies(query) {
+  const params = new URLSearchParams({ query });
+  try {
+    const response = await fetch(`${BASE_URL}/search/movie?${params}`, {
+      headers: {
+        Authorization: `Bearer ${TMDB_TOKEN}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erro! ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data.results;
+  } catch (error) {
+    console.log(error);
     throw error;
   }
 }

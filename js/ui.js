@@ -42,3 +42,8 @@ export function renderMovies(movies) {
     movieList.append(movieItem);
   });
 }
+
+export function showListTitle(text) {
+  const titleList = document.querySelector(".list-title");
+  titleList.textContent = text;
+}
