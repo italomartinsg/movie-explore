@@ -1,4 +1,4 @@
-import showListMessage from "./ui.js";
+import showListMessage, { renderMovies } from "./ui.js";
 import getPopularMovies from "./api.js";
 import state from "./state.js";
 
@@ -26,7 +26,7 @@ async function loadPopularMovies() {
       return;
     }
     showListMessage("");
-    console.log(state.movies);
+    renderMovies(state.movies);
   } catch (error) {
     return showListMessage("Não foi possível carregar os filmes.");
   }
