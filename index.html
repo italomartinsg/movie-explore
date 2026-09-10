@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -14,11 +17,13 @@
   </header>
   <main>
     <div class="container">
-
       <form>
         <label for="buscar-filme">Buscar Filme</label>
+
         <input type="search" id="buscar-filme" placeholder="Ex.: Matrix">
         <button type="submit" id="btn-buscar">Buscar</button>
+
+
       </form>
       <section>
         <h2 class="list-title">Filmes Populares</h2>
@@ -27,8 +32,8 @@
       </section>
     </div>
   </main>
-  <dialog id="movie-modal">
-    <button type="button" id="close-modal" aria-label="Detalhes do filme">Fechar</button>
+  <dialog id="movie-modal" aria-label="Detalhes do filme">
+    <button type="button" id="close-modal">Fechar</button>
     <p class="details-message" role="status"></p>
     <div class="movie-details"></div>
   </dialog>
