@@ -35,8 +35,25 @@ export async function searchMovies(query) {
     }
 
     const data = await response.json();
-    console.log(data);
+
     return data.results;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+export async function getMovieDetails(movieId) {
+  try {
+    const response = await fetch(`${BASE_URL}/movie/${movieId}`, {
+      headers: {
+        Authorization: `Bearer ${TMDB_TOKEN}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Erro! ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.log(error);
     throw error;
